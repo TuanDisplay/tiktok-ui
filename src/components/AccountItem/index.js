@@ -11,7 +11,7 @@ export default function AccountItem() {
     <div className={cx("wrapper")}>
       <img
         className={cx("avatar")}
-        src="https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/ff378af39120d4eb668eef664f92098a.jpeg?lk3s=a5d48078&nonce=18852&refresh_token=9d3b898d1b99ded641e70953df5374c7&x-expires=1733655600&x-signature=CWzicvoGzaaKPeeD0WKe2DvO5cI%3D&shp=a5d48078&shcp=81f88b70"
+        src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg"
         alt="letuankhang2002"
       />
       <div className={cx("info")}>
