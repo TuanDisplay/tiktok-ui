@@ -6,7 +6,8 @@
   padding: 9px 16px;
   border-radius: 4px;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: "TiktokFont", san-serif;
   cursor: pointer;
   background-color: var(--white);
   border: 1px solid transparent;
@@ -27,9 +28,10 @@
 }
 
 .icon {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
-  text-align: center;
 }
 
 // Button stypes

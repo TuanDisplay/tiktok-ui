@@ -3,15 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
   faSpinner,
-  faMagnifyingGlass,
   faEllipsisVertical,
-  faEarthAsia,
-  faCircleQuestion,
   faKeyboard,
-  faCloudUpload,
-  faUser,
-  faGear,
-  faCoins,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react";
@@ -25,12 +18,24 @@ import styles from "./Header.module.scss";
 import { images } from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
+import {
+  CoinsIcon,
+  FeedbackIcon,
+  InboxIcon,
+  LanguageIcon,
+  MessageIcon,
+  ProfileIcon,
+  SearchIcon,
+  SettingIcon,
+  UploadIcon,
+} from "~/components/Icons";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
   {
-    icon: <FontAwesomeIcon icon={faEarthAsia} />,
+    icon: <LanguageIcon />,
     title: "English",
     children: {
       title: "Language",
@@ -49,7 +54,7 @@ const MENU_ITEMS = [
     },
   },
   {
-    icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+    icon: <FeedbackIcon />,
     title: "Feedback and help",
     to: "/feedback",
   },
@@ -83,17 +88,17 @@ function Header() {
 
   const userMenu = [
     {
-      icon: <FontAwesomeIcon icon={faUser} />,
+      icon: <ProfileIcon />,
       title: "View profile",
       to: "/@letuankhang2022",
     },
     {
-      icon: <FontAwesomeIcon icon={faCoins} />,
+      icon: <CoinsIcon />,
       title: "Get Coins",
       to: "/coin",
     },
     {
-      icon: <FontAwesomeIcon icon={faGear} />,
+      icon: <SettingIcon />,
       title: "Setting",
       to: "/user",
     },
@@ -133,7 +138,7 @@ function Header() {
             </button>
             <FontAwesomeIcon icon={faSpinner} className={cx("loading")} />
             <button className={cx("search-btn")}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon />
             </button>
           </div>
         </HeadlessTippy>
@@ -142,7 +147,17 @@ function Header() {
             <>
               <Tippy delay={[0, 200]} content="Upload video">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <UploadIcon />
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 200]} content="Message">
+                <button className={cx("action-btn")}>
+                  <MessageIcon />
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 200]} content="Inbox">
+                <button className={cx("action-btn")}>
+                  <InboxIcon />
                 </button>
               </Tippy>
             </>
@@ -158,10 +173,11 @@ function Header() {
             onChange={handleMenuChange}
           >
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
-                src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg"
+                src="https://p9-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/60b99c0cc47197abbb34737a8ea1277b.jpeg?lk3s=a5d48078&nonce=21751&refresh_token=53ab1cf26b6fd0868796a1c754b94595&x-expires=1734235200&x-signature=Fkbeqs%2Fh9pOprGFLe05izRZPYXw%3D&shp=a5d48078&shcp=81f88b70"
                 alt="letuankhang2002"
+                fallback="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png"
               />
             ) : (
               <button className={cx("more-btn")}>
