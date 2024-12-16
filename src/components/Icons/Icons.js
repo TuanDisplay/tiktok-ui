@@ -61,7 +61,7 @@ export const LanguageIcon = ({
   className,
 }) => (
   <svg
-    className
+    className={className}
     width={width}
     height={height}
     viewBox="0 0 48 48"
