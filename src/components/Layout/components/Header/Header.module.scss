@@ -20,18 +20,22 @@
   padding: 0 var(--default-layout-horizonal-spacer);
 }
 
-.more-btn {
-  padding: 4px 8px;
-  font-size: 2rem;
-  margin-left: 28px;
-  background-color: transparent;
-  cursor: pointer;
+.logo-link {
+  display: flex;
 }
 
 // Actions
 .actions {
   display: flex;
   align-items: center;
+}
+
+.more-btn {
+  padding: 4px 8px;
+  font-size: 2rem;
+  margin-left: 28px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .action-btn {
