@@ -51,6 +51,17 @@ export default function Search() {
     setShowResult(false);
   };
 
+  const handleSearchResult = (attrs) => (
+    <div className={cx("search-result")} tabIndex={-1} {...attrs}>
+      <PopperWrapper>
+        <h4 className={cx("search-title")}>Accounts</h4>
+        {searchResult.map((result) => (
+          <AccountItem key={result.id} data={result} />
+        ))}
+      </PopperWrapper>
+    </div>
+  );
+
   return (
     // Using a wrapper <div> tag around the reference element solves
     // this by creating a new parentNode context.
@@ -58,16 +69,7 @@ export default function Search() {
       <HeadlessTippy
         interactive
         visible={showResult && searchResult.length > 0}
-        render={(attrs) => (
-          <div className={cx("search-result")} tabIndex={-1} {...attrs}>
-            <PopperWrapper>
-              <h4 className={cx("search-title")}>Accounts</h4>
-              {searchResult.map((result) => (
-                <AccountItem key={result.id} data={result} />
-              ))}
-            </PopperWrapper>
-          </div>
-        )}
+        render={handleSearchResult}
         onClickOutside={handleHideResult}
       >
         <div className={cx("search")}>
